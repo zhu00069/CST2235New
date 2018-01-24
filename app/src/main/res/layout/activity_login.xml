@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.zhubo.androidlabsnew.LoginActivity">
+
+    <TextView
+        android:id="@+id/TestViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_message" />
+
+    <EditText
+        android:id="@+id/EditTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/login_message"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/TestViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password_message" />
+
+    <EditText
+        android:id="@+id/EditTextInputPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword" />
+
+    <ImageView
+        android:id="@+id/ImageViewFlag"
+        android:layout_width="147dp"
+        android:layout_height="69dp"
+        android:src="@drawable/flag" />
+
+</LinearLayout>

@@ -2,4 +2,10 @@
 <resources>
     <string name="hello_message">你好 世界!</string>
     <string name="ButtonText">我是按钮!</string>
+    <string name="login_message">登陆邮箱</string>
+    <string name="password_message">密码</string>
+    <string name="RadioButtonText">选择按钮</string>
+    <string name="CheckBoxText">打勾按钮</string>
+    <string name="SwitchText">这是做什么的？</string>
+
 </resources>
