@@ -17,7 +17,7 @@
         android:id="@+id/EditTextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/login_message"
+        android:hint="@string/login_name"
         android:inputType="textEmailAddress" />
 
     <TextView
@@ -30,7 +30,6 @@
         android:id="@+id/EditTextInputPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="password"
         android:inputType="textPassword" />
 
     <ImageView
