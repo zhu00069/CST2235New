@@ -40,7 +40,7 @@ private Button btn_login;
         //Get the text in EditText as e-mail address to be saved
         final Editable emailAddr = email.getText();
 
-        //Set the Login button action.
+        //Set the Login button action.              interface
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +57,6 @@ private Button btn_login;
         });
 
     }
-
 
     @Override
     protected void onDestroy() {

@@ -12,6 +12,8 @@ public class StartActivity extends Activity {
 
     protected static final String ACTIVITY_NAME = "StartActivity";
     private Button btn_start;
+    private Button btn_chat;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +26,26 @@ public class StartActivity extends Activity {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
                 //Jump to ListItemsActivity.
                 Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
                 startActivityForResult(intent, 50);
             }
         });
-    }
+
+        //Define Chat button as btn_start
+        btn_chat = (Button) findViewById(R.id.button_chat);
+        btn_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                //Jump to ChatWindow activity.
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
+
+}
     @Override
     protected void onActivityResult(int requestCode, int responseCode, Intent data){
         if(requestCode == 50){
@@ -44,6 +60,8 @@ public class StartActivity extends Activity {
         Toast toast = Toast.makeText(StartActivity.this, messagePassed, Toast.LENGTH_LONG);
         toast.show();
     }
+
+    //debug: write a debugging message displaying what activity you are in, and what function you are
     @Override
     protected void onDestroy() {
         super.onDestroy();

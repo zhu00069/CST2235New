@@ -22,8 +22,13 @@
         android:id="@+id/button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonText"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="181dp" />
+        android:text="@string/ButtonText" />
+    <Button
+        android:id="@+id/button_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonChat" />
+
+
 
 </android.support.constraint.ConstraintLayout>

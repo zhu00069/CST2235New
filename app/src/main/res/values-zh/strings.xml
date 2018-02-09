@@ -17,5 +17,7 @@
     <string name="dialog_title">回复</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
+    <string name="ButtonChat">开始聊天</string>
+    <string name="button_send">发送</string>
 
 </resources>
