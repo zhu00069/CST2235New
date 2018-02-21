@@ -8,7 +8,6 @@
     android:columnCount="2"
     tools:context="com.example.zhubo.androidlabsnew.ListItemsActivity">
 
-
     <RadioButton
 
         android:id="@+id/radioButton"
@@ -38,9 +37,6 @@
         android:layout_gravity="end|bottom"
         android:layout_columnWeight="1"
         android:gravity="fill"
-        android:src="@android:drawable/ic_menu_camera"
-        />
-
-
+        android:src="@android:drawable/ic_menu_camera" />
 
 </GridLayout>
