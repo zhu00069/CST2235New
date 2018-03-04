@@ -1,9 +1,13 @@
 package com.example.zhubo.androidlabsnew;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,10 +26,23 @@ public class ChatWindow extends Activity {
     private final ArrayList<String> chat = new ArrayList<>();
     //add an ArrayList<String> variable to store your chat messages. Add
 
+    private String ACTIVITY_NAME = "ChatWindow";
+
+    //Get a writable database.
+    private ChatDatabaseHelper dbHelper = null;
+    private SQLiteDatabase db = null;
+
+    //Get table name and column name.
+    String tableName = dbHelper.TABLE_NAME;
+    String keyMsg = dbHelper.KEY_MESSAGE;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
+
+        dbHelper = new ChatDatabaseHelper(this);
+        db = dbHelper.getWritableDatabase();
 
         listview = (ListView)findViewById(R.id.listview_chat);
         edittext = (EditText) findViewById(R.id.edittext_chat);
@@ -35,18 +52,60 @@ public class ChatWindow extends Activity {
         final ChatAdapter messageAdapter = new ChatAdapter(this);
         listview.setAdapter(messageAdapter);
 
+        String query = "SELECT * FROM " + tableName +";";
+        Cursor c = db.rawQuery(query, null);
+
+        //Read existed messages from database.
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+
+            String str = c.getString( c.getColumnIndex( dbHelper.KEY_MESSAGE) );
+            chat.add(str);
+
+            //this restarts the process of getCount() & getView() to retrieve chat history
+            messageAdapter.notifyDataSetChanged();
+
+            Log.i(ACTIVITY_NAME, "SQL MESSAGE:" + str );
+            c.moveToNext();
+        }
+
+        //Print colomn name.
+        Log.i(ACTIVITY_NAME, "Cursor’s  column count = " + c.getColumnCount());
+        for(int i = 0; c.getColumnCount() > i; i++){
+            Log.i(ACTIVITY_NAME, "Coloumn " + i + " : " + c.getColumnName(i));
+        }
+
         btn_send.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                String msg = edittext.getText().toString();
-                chat.add(msg); //store msg to ArrayList-chat
 
-                //this restarts the process of getCount() & getView()
-                messageAdapter.notifyDataSetChanged();
+                public void onClick(View view) {
 
-                //when the user clicks “Send”, clear the textView
-                edittext.setText("");
+                    //New messages.
+                    String msg = edittext.getText().toString();
+                    chat.add(msg);
+
+                    //this restarts the process of getCount() & getView()
+                    messageAdapter.notifyDataSetChanged();
+
+                    //when the user clicks “Send”, clear the textView
+                    edittext.setText("");
+
+                    //Write messages to database.
+                    ContentValues cv = new ContentValues();
+                    cv.put(keyMsg, msg);
+                    db.insert(tableName,null,cv);
+
+                    //another way to write to datasbse using query.
+//                String query = "INSERT INTO " + tableName + " (" + keyMsg + ") VALUES ('" + msg + "')";
+//                db.execSQL(query);
+
             }
         });
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
+        Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 
     private class ChatAdapter extends ArrayAdapter<String> {
