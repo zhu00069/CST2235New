@@ -13,6 +13,7 @@ public class StartActivity extends Activity {
     protected static final String ACTIVITY_NAME = "StartActivity";
     private Button btn_start;
     private Button btn_chat;
+    private Button btn_weather;
 
 
     @Override
@@ -41,6 +42,17 @@ public class StartActivity extends Activity {
                 Log.i(ACTIVITY_NAME, "User clicked Start Chat");
                 //Jump to ChatWindow activity.
                 Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
+        //Define Weather button as btn_weather
+        btn_weather = (Button)findViewById(R.id.button_weather);
+        btn_weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
+                //Jump to WeatherForecast activity.
+                Intent intent = new Intent(StartActivity.this, WeatherForecastActivity.class);
                 startActivity(intent);
             }
         });

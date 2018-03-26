@@ -26,7 +26,12 @@
         android:id="@+id/button_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonChat"
-        app:layout_constraintTop_toBottomOf="@+id/button_start" />
+        android:text="@string/ButtonChat" />
+    <Button
+        android:id="@+id/button_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weather" />
+
 </LinearLayout>
 </android.support.constraint.ConstraintLayout>
