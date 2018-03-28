@@ -15,7 +15,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME ="table_msg";
     //database version
     private static final int DATABASE_VERSION = 5;
-    private static final String KEY_ID ="id";
+    public static final String KEY_ID ="id";
     public static final String KEY_MESSAGE = "message";  //a column for MESSAGE as strings.
 
     public ChatDatabaseHelper(Context ctx){

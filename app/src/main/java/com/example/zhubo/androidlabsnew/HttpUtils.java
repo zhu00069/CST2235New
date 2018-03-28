@@ -25,17 +25,7 @@ public class HttpUtils {
         try {
             connection = (HttpURLConnection) url.openConnection();
             connection.connect();
-//            BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
-//            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-//            //We create an array of bytes
-//            byte[] data = new byte[50];
-//            int current = 0;
-//
-//            while((current = bis.read(data,0,data.length)) != -1){
-//                buffer.write(data,0,current);
-//            }
-//
-//            return BitmapFactory.decodeByteArray(buffer.toByteArray(), 0, buffer.size());
+
             return BitmapFactory.decodeStream(connection.getInputStream());
         } catch (Exception e) {
             return null;
