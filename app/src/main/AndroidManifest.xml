@@ -24,7 +24,7 @@
         <activity android:name=".ChatDatabaseHelper" />
         <activity android:name=".WeatherForecastActivity" />
         <activity android:name=".MessageDetails" />
-        <activity android:name=".MessageFragment"></activity>
+        <activity android:name=".MessageFragment" />
     </application>
 
 </manifest>

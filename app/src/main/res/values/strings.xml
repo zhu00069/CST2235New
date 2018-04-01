@@ -25,6 +25,13 @@
     <string name="minTemp">Minimum Temperature: </string>
     <string name="maxTemp">Maximum Temperature: </string>
     <string name="wind">windSpeed: </string>
+    <string name="title_activity_test_tool_bar">TestToolBar</string>
 
+    <string name="testToolbar">Test Toolbar</string>
+    <string name="toolbar_one">One</string>
+    <string name="toolbar_two">Two</string>
+    <string name="toolbar_three">Three</string>
+    <string name="toolbar_four">About</string>
+    <string name="menu_item2">Do you want to go back?</string>
 
 </resources>

@@ -14,7 +14,7 @@ public class StartActivity extends Activity {
     private Button btn_start;
     private Button btn_chat;
     private Button btn_weather;
-
+    private Button btn_testToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,17 @@ public class StartActivity extends Activity {
                 Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
                 //Jump to WeatherForecast activity.
                 Intent intent = new Intent(StartActivity.this, WeatherForecastActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_testToolbar = findViewById(R.id.testToolbar);
+        btn_testToolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Test Toolbar");
+                //Jump to TestToolbar activity.
+                Intent intent = new Intent(StartActivity.this, TestToolBar.class);
                 startActivity(intent);
             }
         });
