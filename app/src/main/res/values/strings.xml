@@ -3,35 +3,6 @@
     <string name="hello_message">Hello World!</string>
 
     <string name="ButtonText">I\’m a button</string>
-    <string name="ButtonText_login">Login</string>
 
-    <string name="login_message">login</string>
-    <string name="login_name">login name</string>
-
-    <string name="password_message">password</string>
-    <string name="RadioButtonText">Radio Button</string>
-    <string name="CheckBoxText">Check Box</string>
-    <string name="SwitchText">What does this do?</string>
-
-    <string name="dialog_message">do you want to finish the activity</string>
-    <string name="dialog_title">response</string>
-    <string name="ok">ok!</string>
-    <string name="cancel">cancel</string>
-    <string name="ButtonChat">Start Chat</string>
-    <string name="button_send">send</string>
-
-    <string name="weather">Weather Forecast</string>
-    <string name="crtTemp">Current Temperature: </string>
-    <string name="minTemp">Minimum Temperature: </string>
-    <string name="maxTemp">Maximum Temperature: </string>
-    <string name="wind">windSpeed: </string>
-    <string name="title_activity_test_tool_bar">TestToolBar</string>
-
-    <string name="testToolbar">Test Toolbar</string>
-    <string name="toolbar_one">One</string>
-    <string name="toolbar_two">Two</string>
-    <string name="toolbar_three">Three</string>
-    <string name="toolbar_four">About</string>
-    <string name="menu_item2">Do you want to go back?</string>
 
 </resources>
