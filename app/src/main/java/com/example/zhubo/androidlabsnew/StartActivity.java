@@ -63,7 +63,7 @@ public class StartActivity extends Activity {
             public void onClick(View view) {
                 Log.i(ACTIVITY_NAME, "User clicked Test Toolbar");
                 //Jump to TestToolbar activity.
-                Intent intent = new Intent(StartActivity.this, TestToolBar.class);
+                Intent intent = new Intent(StartActivity.this, TestToolbar.class);
                 startActivity(intent);
             }
         });
