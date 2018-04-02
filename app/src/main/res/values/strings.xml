@@ -33,5 +33,6 @@
     <string name="toolbar_three">Three</string>
     <string name="toolbar_four">About</string>
     <string name="menu_item2">Do you want to go back?</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
 
 </resources>
